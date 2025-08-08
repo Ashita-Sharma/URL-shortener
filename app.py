@@ -29,7 +29,9 @@ def shorten_url():
     # Create the full short link
     short_link = f"http://localhost:5000/{short_code}"
 
-    return f"Your short URL: <a href='{short_link}'>{short_link}</a>"
+    return render_template('resultforshortener.html',
+                           original_url=long_url,
+                           short_url=short_link)
 
 
 @app.route('/<short_code>')
@@ -47,7 +49,9 @@ def remove_trackers():
     for word in tracker_list:
         if word in og_url:
             clean_url = og_url[:og_url.find(word)]
-    return f"<a href='{clean_url}'>{clean_url}</a>"
+    return render_template('resultfortracker.html',
+                           original_url=og_url,
+                           short_url=clean_url)
 
 if __name__ == "__main__":
     app.run(debug=True)
