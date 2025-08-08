@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect, render_template
 import random
 import string
+import os
 tracker_list = ["ref", "&", "?", "?si", "?igsh", "&pp", "?itmmeta"]
 app = Flask(__name__)
 
@@ -53,6 +54,6 @@ def remove_trackers():
                            original_url=og_url,
                            short_url=clean_url)
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
