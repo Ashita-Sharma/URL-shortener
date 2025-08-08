@@ -4,7 +4,7 @@ import string
 tracker_list = ["ref", "&", "?", "?si", "?igsh", "&pp", "?itmmeta"]
 app = Flask(__name__)
 
-# basic in-memory storage (to replace this with a database later)
+# basic in-memory storage (to replace this with a database soon)
 url_database = {}
 
 @app.route('/')
