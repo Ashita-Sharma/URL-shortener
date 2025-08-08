@@ -25,7 +25,8 @@
         }
 
         input[type="text"] {
-            width: 280px; /* Same width as button */
+            width: 100%;
+            max-width: 350px; /* Limit max width on larger screens */
             padding: 15px;
             border: 2px solid #ddd;
             border-radius: 5px;
@@ -35,7 +36,8 @@
             display: block;
         }
 
-         button {
+
+          button {
             background-color: #007bff;
             color: white;
             padding: 15px 30px;
@@ -45,10 +47,12 @@
             cursor: pointer;
             margin-top: 10px;
             min-height: 44px;
-            width: 280px; /* Same width as input */
+            width: 100%; /* Same responsive width as input */
+            max-width: 350px; /* Same max-width as input */
             display: block;
             margin-left: auto;
             margin-right: auto;
+            box-sizing: border-box;
         }
         button:hover {
             background-color: #0056b3;
